@@ -1,0 +1,52 @@
+// const object = { a: 1, b: 2, c: 3,
+//                     d:{e:4,f:5,
+//                         g:{h:6,i:7,
+//                             j:{ k:8,l:{m:{n:9}}}
+//                         }
+//                     } 
+//                 };
+                
+const object={
+    a:{
+        b:{
+            c:1,
+            d:{
+                e:{
+                    f:2
+                }
+            }
+        }
+    }
+};
+
+// for (const property in object) {
+//     console.log(typeof(object[property])==='object');
+//     console.log(`${property}: ${object[property]}`);
+// }
+
+let newobj={}
+
+function copyobj(obj,nobj) {
+    for(const property in obj) {
+        if(typeof(obj[property])==='object') {
+            nobj[property]=copyobj(obj[property],{});
+        } else {
+            nobj[property]=obj[property];
+        }
+    }
+   // console.log(nobj);
+    return nobj;
+}
+
+
+//console.log(copyobj(object,{}));
+newobj=copyobj(object,{});
+
+//object['d']['e']=21;
+console.log("original object is");
+console.log(object);
+
+console.log("copied object is");
+console.log(newobj);
+console.log("test");
+//console.log(newobj['d']['g']['j']);
