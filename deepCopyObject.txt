@@ -50,3 +50,9 @@ console.log("copied object is");
 console.log(newobj);
 console.log("test");
 //console.log(newobj['d']['g']['j']);
+
+
+//Method2
+console.log("method2");
+let obj3 = JSON.parse(JSON.stringify(object));
+console.log(obj3);
