@@ -40,19 +40,18 @@ function copyobj(obj,nobj) {
 
 
 //console.log(copyobj(object,{}));
-newobj=copyobj(object,{});
-
+newobj=copyobj(object,{}); //Method1
+let obj3 = JSON.parse(JSON.stringify(object));//method2
 //object['d']['e']=21;
+object['a']['b']['c']=20;
 console.log("original object is");
 console.log(object);
 
 console.log("copied object is");
 console.log(newobj);
 console.log("test");
-//console.log(newobj['d']['g']['j']);
 
 
 //Method2
 console.log("method2");
-let obj3 = JSON.parse(JSON.stringify(object));
 console.log(obj3);
